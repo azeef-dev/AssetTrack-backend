@@ -54,7 +54,7 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 app.get('/', (req, res) => {
-    res.send('MaintainIQ API is running. See /api/health');
+    res.send('AssetTrack API is running. See /api/health');
 });
 
 app.use(notFound);
@@ -66,7 +66,7 @@ const startServer = async () => {
     await connectDB();
     await seedSuperAdmin();
     app.listen(PORT, () => {
-        console.log(`MaintainIQ backend running on port ${PORT} [${process.env.NODE_ENV || 'development'}]`);
+        console.log(`AssetTrack backend running on port ${PORT} [${process.env.NODE_ENV || 'development'}]`);
     });
 };
 

@@ -35,7 +35,7 @@ export const createMaintenanceRecord = asyncHandler(async (req, res) => {
         conditionAfter,
         nextServiceDate,
         notes,
-        evidence: req.files ? req.files.map((f) => `/uploads/${f.filename}`) : [],
+        evidence: req.files ? req.files.map((f) => f.path) : [], // Cloudinary secure URL
     });
 
     if (conditionAfter) issue.asset.condition = conditionAfter;

@@ -63,7 +63,7 @@ if (!process.env.VERCEL) {
         .then(() => seedSuperAdmin())
         .then(() => {
             app.listen(PORT, () => {
-                console.log(`AssetTrack backend running on port ${PORT} [${process.env.NODE_ENV || 'development'}]`);
+                console.log(`AssetTrack backend running on port ${PORT} [${process.env.NODE_ENV}]`);
             });
         })
         .catch((err) => {

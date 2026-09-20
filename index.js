@@ -42,7 +42,7 @@ app.use(async (req, res, next) => {
 // so there is no local /uploads static route anymore — nothing to serve.
 
 app.get('/api/health', (req, res) => {
-    res.status(200).json({ success: true, message: 'MaintainIQ API is running', timestamp: new Date().toISOString() });
+    res.status(200).json({ success: true, message: 'AssetTrack API is running', timestamp: new Date().toISOString() });
 });
 
 app.use('/api/auth', authRoutes);
@@ -55,7 +55,7 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 app.get('/', (req, res) => {
-    res.send('MaintainIQ API is running. See /api/health');
+    res.send('AssetTrack API is running. See /api/health');
 });
 
 app.use(notFound);
@@ -68,7 +68,7 @@ if (!process.env.VERCEL) {
         .then(() => seedSuperAdmin())
         .then(() => {
             app.listen(PORT, () => {
-                console.log(`MaintainIQ backend running on port ${PORT} [${process.env.NODE_ENV || 'development'}]`);
+                console.log(`AssetTrack backend running on port ${PORT} [${process.env.NODE_ENV || 'development'}]`);
             });
         })
         .catch((err) => {

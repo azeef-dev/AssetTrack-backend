@@ -1,5 +1,5 @@
+import 'dotenv/config';
 import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -17,8 +17,6 @@ import maintenanceRoutes from './routes/maintenanceRoutes.js';
 import historyRoutes from './routes/historyRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import dashboardRoutes from './routes/dashboardRoutes.js';
-
-dotenv.config();
 
 const app = express();
 

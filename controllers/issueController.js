@@ -69,7 +69,7 @@ export const createIssue = asyncHandler(async (req, res) => {
         priority: priority || 'Medium',
         reportedBy: req.user ? req.user._id : undefined,
         guestReporter: !req.user ? { name: guestName, email: guestEmail, phone: guestPhone } : undefined,
-        evidence: req.files ? req.files.map((f) => `/uploads/${f.filename}`) : [],
+        evidence: req.files ? req.files.map((f) => f.path) : [], // Cloudinary secure URL
         aiSuggestion: parsedAiSuggestion || undefined,
         aiWasEdited: !!aiWasEdited,
     });

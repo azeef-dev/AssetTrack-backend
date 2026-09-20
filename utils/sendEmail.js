@@ -25,7 +25,7 @@ const sendEmail = async ({ to, subject, html }) => {
     }
     try {
         await t.sendMail({
-            from: process.env.EMAIL_FROM || `"MaintainIQ" <${process.env.EMAIL_USER}>`,
+            from: process.env.EMAIL_FROM || `"AssetTrack" <${process.env.EMAIL_USER}>`,
             to,
             subject,
             html,

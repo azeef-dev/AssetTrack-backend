@@ -36,9 +36,6 @@ app.use(async (req, res, next) => {
     }
 });
 
-// NOTE: evidence files now live on Cloudinary (see middleware/uploadMiddleware.js),
-// so there is no local /uploads static route anymore — nothing to serve.
-
 app.get('/api/health', (req, res) => {
     res.status(200).json({ success: true, message: 'AssetTrack API is running', timestamp: new Date().toISOString() });
 });

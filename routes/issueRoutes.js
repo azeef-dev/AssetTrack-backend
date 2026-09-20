@@ -5,11 +5,11 @@ import {
 } from '../controllers/issueController.js';
 import { protect, authorize, optionalAuth } from '../middleware/authMiddleware.js';
 import { publicReportLimiter } from '../middleware/rateLimiter.js';
-import upload from '../middleware/uploadMiddleware.js';
+import upload, { uploadToCloudinary } from '../middleware/uploadMiddleware.js';
 
 const router = express.Router();
 
-router.post('/', publicReportLimiter, optionalAuth, upload.array('evidence', 5), createIssue);
+router.post('/', publicReportLimiter, optionalAuth, upload.array('evidence', 5), uploadToCloudinary('maintainiq/issues'), createIssue);
 router.get('/track/:issueNumber', trackIssue);
 
 router.use(protect);
